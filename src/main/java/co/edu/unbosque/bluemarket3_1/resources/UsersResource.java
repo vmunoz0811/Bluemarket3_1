@@ -1,7 +1,7 @@
 package co.edu.unbosque.bluemarket3_1.resources;
 
-import co.edu.unbosque.wsresttutorial.services.UserService;
-
+import co.edu.unbosque.bluemarket3_1.dtos.User1;
+import co.edu.unbosque.bluemarket3_1.dtos.UserService;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.MediaType;
@@ -23,7 +23,7 @@ public class UsersResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
         try {
-            List<User> users = new UserService().getUsers();
+            List<User1> users = new UserService().getUsers();
 
             return Response.ok()
                     .entity(users)

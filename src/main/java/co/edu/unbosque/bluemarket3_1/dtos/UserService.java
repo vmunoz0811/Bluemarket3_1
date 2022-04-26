@@ -1,6 +1,5 @@
-package co.edu.unbosque.wsresttutorial.services;
+package co.edu.unbosque.bluemarket3_1.dtos;
 
-import co.edu.unbosque.wsresttutorial.dtos.User;
 import com.opencsv.bean.*;
 
 import java.io.*;
@@ -9,9 +8,9 @@ import java.util.List;
 
 public class UserService {
 
-    public List<User> getUsers() throws IOException {
+    public List<User1> getUsers() throws IOException {
 
-        List<User> users;
+        List<User1> users;
 
         try (InputStream is = UserService.class.getClassLoader()
                 .getResourceAsStream("users.csv")) {
@@ -21,8 +20,8 @@ public class UserService {
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
 
-                CsvToBean<User> csvToBean = new CsvToBeanBuilder<User>(br)
-                        .withType(User.class)
+                CsvToBean<User1> csvToBean = new CsvToBeanBuilder<User>(br)
+                        .withType(User1.class)
                         .withMappingStrategy(strategy)
                         .withIgnoreLeadingWhiteSpace(true)
                         .build();
@@ -33,13 +32,16 @@ public class UserService {
 
         return users;
     }
-
-    public User createUser(String username, String password, String role, String path) throws IOException {
-        String newLine = "\n" + username + "," + password + "," + role;
+    /*public void createUser(String username, String password, String path) throws IOException {
+        String newLine = "\n" + username + "," + password + ",customer";
         FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
         os.write(newLine.getBytes());
         os.close();
-
-        return new User(username, password, role);
+    }*/
+    public void createUser(String username, String name, String lastname, String mail, String password, String Fcoins, String path) throws IOException {
+        String newLine =  username + "," + name + ","+lastname+ "," + mail + "," + password +","+ Fcoins +"\n";
+        FileOutputStream os = new FileOutputStream(path + "WEB-INF/classes/" + "users.csv", true);
+        os.write(newLine.getBytes());
+        os.close();
     }
 }

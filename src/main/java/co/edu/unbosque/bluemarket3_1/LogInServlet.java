@@ -1,10 +1,9 @@
-package co.edu.unbosque.servletjsptutorial;
+package co.edu.unbosque.bluemarket3_1;
 
 import java.io.*;
 import java.util.List;
 
-import co.edu.unbosque.servletjsptutorial.dtos.User;
-import co.edu.unbosque.servletjsptutorial.services.UserService;
+import co.edu.unbosque.bluemarket3_1.dtos.User;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;

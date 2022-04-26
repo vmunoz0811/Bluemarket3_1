@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Bluemarket3_1-1.0-SNAPSHOT.war">
+    <root id="archive" name="Bluemarket-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Bluemarket3_1:war exploded" />
     </root>
   </artifact>

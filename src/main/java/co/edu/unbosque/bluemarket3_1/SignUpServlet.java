@@ -1,4 +1,4 @@
-package co.edu.unbosque.servletjsptutorial;
+package co.edu.unbosque.bluemarket3_1;
 
 import co.edu.unbosque.servletjsptutorial.services.UserService;
 import jakarta.servlet.RequestDispatcher;
